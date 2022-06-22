@@ -20,17 +20,17 @@ document.getElementById("login-form").addEventListener("submit", function(e){
     }
 
     if(account){
-        if(account.password !== password);{
+        if(account.password !== password) {
             alert("Opps! Verifique o usuário ou a senha.");
             return;
         }
 
-    saveSession (email, checkSession)
+        saveSession(email, checkSession);
 
         window.location.href = "home.html";
     }
     
-})
+});
 
 //CRIAR CONTA
 document.getElementById("create-form").addEventListener("submit", function(e){
@@ -77,11 +77,11 @@ function saveAccount(data){
 }
 
 function saveSession(data, saveSession){
-if(saveSession){
-    localStorage.setItem("session", data)
-}
+    if(saveSession){
+        localStorage.setItem("session", data);
+    }
 
-sessionStorage.setItem("logged", data)
+    sessionStorage.setItem("logged", data);
 }
 
 function getAccount(key) {

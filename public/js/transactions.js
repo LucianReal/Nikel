@@ -11,7 +11,7 @@ document.getElementById("button-logout").addEventListener("click", logout);
 
 //ADICIONAR LANÇAMENTO
 
-document.getElementById("transactionform").addEventListener("submit", function(e){
+document.getElementById("transaction-form").addEventListener("submit", function(e){
     e.preventDefault();
 
     const value = parseFloat(document.getElementById("value-input").value);

@@ -14,7 +14,7 @@ document.getElementById("transactions-button").addEventListener("click", functio
 
 //ADICIONAR LANÇAMENTO
 
-document.getElementById("transactionform").addEventListener("submit", function(e){
+document.getElementById("transaction-form").addEventListener("submit", function(e){
     e.preventDefault();
 
     const value = parseFloat(document.getElementById("value-input").value);
@@ -74,16 +74,17 @@ function getCashIn(){
     if(cashIn.length){
         let cashInHtml = ``;
         let limit = 0;
-
-        if(cashIn.length > 5){
-            limit = 5;
-        } else{
-            limit = cashIn.length;
-        }
-    
     }
 
-    for (let index = 0; index < array.length; index++) {
+    if(cashIn.length > 5){
+        limit = 5;
+    } else{
+        limit = cashIn.length;
+    }
+    
+    
+
+    for (let index = 0; index < limit; index++) {
           cashInHtml +=`
           <div class="row mb-4">
           <div class="col-12">
@@ -116,14 +117,15 @@ function getCashOut(){
     if(cashIn.length){
         let cashInHtml = ``;
         let limit = 0;
-
-        if(cashIn.length > 5){
-            limit = 5;
-        } else{
-            limit = cashIn.length;
-        }
-    
     }
+
+    if(cashIn.length > 5){
+        limit = 5;
+    } else{
+        limit = cashIn.length;
+    }
+    
+    
 
     for (let index = 0; index < array.length; index++) {
           cashInHtml +=`
@@ -152,6 +154,7 @@ function getCashOut(){
 
 function getTotal(){
     const transactions = data.transactions;
+    let total = 0;
 
     transactions.forEach((item) => {
         if(item.type === "1"){
