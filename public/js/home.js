@@ -71,10 +71,10 @@ function getCashIn(){
 
     const cashIn = transactions.filter((item) => item.type === "1");
 
-    if(cashIn.length){
-        let cashInHtml = ``;
-        let limit = 0;
-    }
+    
+let cashInHtml = ``;
+let limit = 0;
+    
 
     if(cashIn.length > 5){
         limit = 5;
@@ -114,10 +114,10 @@ function getCashOut(){
 
     const cashIn = transactions.filter((item) => item.type === "2");
 
-    if(cashIn.length){
-        let cashInHtml = ``;
-        let limit = 0;
-    }
+    
+let cashInHtml = ``;
+let limit = 0;
+    
 
     if(cashIn.length > 5){
         limit = 5;
@@ -127,7 +127,7 @@ function getCashOut(){
     
     
 
-    for (let index = 0; index < array.length; index++) {
+    for (let index = 0; index < limit; index++) {
           cashInHtml +=`
           <div class="row mb-4">
           <div class="col-12">
